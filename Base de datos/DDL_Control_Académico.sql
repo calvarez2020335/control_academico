@@ -119,13 +119,27 @@ CREATE TABLE asignacion_alumno(
 DATOS DE PRUEBA
 ***********************************************************************/
 
+/**********************************************************************
+DATOS DE SALON
+***********************************************************************/
+
+INSERT INTO salon (capacidad, descripcion, nombre_salon)
+VALUES(45, "salon de computacion", "Salon-C1");
+INSERT INTO salon (capacidad, descripcion, nombre_salon)
+VALUES(30, "salon de matematicas", "Salon-M1");
+INSERT INTO salon (capacidad, descripcion, nombre_salon)
+VALUES(20, "Salon de Lengua", "Salon-L1");
+INSERT INTO salon (capacidad, descripcion, nombre_salon)
+VALUES(10, "salon de Biologia", "Salon-B1");
+INSERT INTO salon (capacidad, descripcion, nombre_salon)
+VALUES(25, "Salon de Artes", "Salon-A1");
+select * from salon;
+
+
+
 INSERT INTO horario (horario_final, horario_inicio)
 VALUES (current_time(), current_time());
 select * from horario;
-
-INSERT INTO salon (capacidad, descripcion, nombre_salon)
-VALUES(1, "a", "a");
-select * from salon;
 
 INSERT INTO carrera_tecnica(codigo_carrera,nombre)
 VALUES ("IN5BV","b");
