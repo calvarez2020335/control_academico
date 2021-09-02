@@ -6,6 +6,7 @@ D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\m
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Alumno.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\ISalonDao.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\SalonDaoImpl.java
+D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletAsigAlumno.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\db\Conexion.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\CarreraTecnica.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\ICarreraTecnicaDao.java
@@ -13,6 +14,7 @@ D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\m
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\ICursoDao.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\IAlumnoDao.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Instructor.java
+D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\AsigAlumnoDaoImpl.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\system\Principal.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Curso.java
 D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Horario.java

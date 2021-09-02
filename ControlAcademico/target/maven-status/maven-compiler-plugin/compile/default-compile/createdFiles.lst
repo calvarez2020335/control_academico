@@ -6,10 +6,12 @@ com\equipotres\models\domain\Curso.class
 com\equipotres\models\idao\IInstructorDao.class
 com\equipotres\models\domain\Instructor.class
 com\equipotres\models\idao\ISalonDao.class
+com\equipotres\models\dao\AsigAlumnoDaoImpl.class
 com\equipotres\controllers\ServletSalon.class
 com\equipotres\models\idao\IAlumnoDao.class
 com\equipotres\models\idao\ICursoDao.class
 com\equipotres\db\Conexion.class
+com\equipotres\controllers\ServletAsigAlumno.class
 com\equipotres\models\idao\IAsignacionAlumnoDao.class
 com\equipotres\models\domain\CarreraTecnica.class
 com\equipotres\models\idao\IHorarioDao.class

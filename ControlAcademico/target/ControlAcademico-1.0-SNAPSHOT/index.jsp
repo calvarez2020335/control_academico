@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>Control Academico</h1>
-        <a href="${pageContext.request.contextPath}/ServletSalon?accion=listar">Listar Salones</a>
+        <a href="${pageContext.request.contextPath}/ServletSalon?accion=listar">Listar Salones</a>  <br>
+        <a href="${pageContext.request.contextPath}/ServletAsigAlumno?accion=listar">Listar Asignacion de alumnos</a>
     </body>
 </html>
