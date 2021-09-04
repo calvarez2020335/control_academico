@@ -12,23 +12,27 @@ package com.equipotres.models.domain;
  */
 
 public class CarreraTecnica {
-    private String codigo_carrera;
+    private String codigoCarrera;
     private String nombre;
 
     public CarreraTecnica() {
     }
 
-    public CarreraTecnica(String codigo_carrera, String nombre) {
-        this.codigo_carrera = codigo_carrera;
+    public CarreraTecnica(String codigoCarrera) {
+        this.codigoCarrera = codigoCarrera;
+    }
+
+    public CarreraTecnica(String codigoCarrera, String nombre) {
+        this.codigoCarrera = codigoCarrera;
         this.nombre = nombre;
     }
 
-    public String getCodigo_carrera() {
-        return codigo_carrera;
+    public String getCodigoCarrera() {
+        return codigoCarrera;
     }
 
-    public void setCodigo_carrera(String codigo_carrera) {
-        this.codigo_carrera = codigo_carrera;
+    public void setCodigoCarrera(String codigoCarrera) {
+        this.codigoCarrera = codigoCarrera;
     }
 
     public String getNombre() {
@@ -39,11 +43,13 @@ public class CarreraTecnica {
         this.nombre = nombre;
     }
 
-    
     @Override
     public String toString() {
-        return "CarreraTecnica{" + "codigo_carrera=" + codigo_carrera + ", nombre=" + nombre + '}';
+        return "CarreraTecnica{" + "codigoCarrera=" + codigoCarrera + ", nombre=" + nombre + '}';
     }
     
+
+
     
+   
 }

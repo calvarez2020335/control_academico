@@ -12,7 +12,7 @@ package com.equipotres.models.domain;
  */
 public class Alumno {
     
-    private int id;
+    private String Carne;
     private String apellidos;
     private String nombres;
     private String email;
@@ -20,8 +20,8 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(int id) {
-        this.id = id;
+    public Alumno(String Carne) {
+        this.Carne = Carne;
     }
 
     public Alumno(String apellidos, String nombres, String email) {
@@ -29,13 +29,20 @@ public class Alumno {
         this.nombres = nombres;
         this.email = email;
     }
-
-    public int getId() {
-        return id;
+    
+    public Alumno(String Carne, String apellidos, String nombres, String email) {
+        this.Carne = Carne;
+        this.apellidos = apellidos;
+        this.nombres = nombres;
+        this.email = email;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getCarne() {
+        return Carne;
+    }
+
+    public void setCarne(String Carne) {
+        this.Carne = Carne;
     }
 
     public String getApellidos() {
@@ -64,8 +71,10 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Alumno{" + "id=" + id + ", apellidos=" + apellidos + ", nombres=" + nombres + ", email=" + email + '}';
+        return "Alumno{" + "Carne=" + Carne + ", apellidos=" + apellidos + ", nombres=" + nombres + ", email=" + email + '}';
     }
+
+    
 
 
 }

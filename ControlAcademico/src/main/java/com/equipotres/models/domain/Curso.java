@@ -12,37 +12,52 @@ package com.equipotres.models.domain;
  * @author PANQUESITO
  */
 public class Curso {
-    private int cursoId;
+    private int curso_id;
     private int ciclo;
-    private int cupoMaximo;
-    private int cupoMinimo;
+    private int cupo_maximo;
+    private int cupo_minimo;
     private String descripcion;
-    private String codigoCarrera;
-    private int horarioId;
-    private int instructorId;
-    private int salonId;
+    private String codigo_carrera;
+    private int horario_id;
+    private int instructor_id;
+    private int salon_id;
 
     public Curso() {
     }
 
-    public Curso(int cursoId, int ciclo, int cupoMaximo, int cupoMinimo, String descripcion, String codigoCarrera, int horarioId, int instructorId, int salonId) {
-        this.cursoId = cursoId;
+    public Curso(int curso_id) {
+        this.curso_id = curso_id;
+    }
+    
+    public Curso(int ciclo, int cupo_maximo, int cupo_minimo, String descripcion, String codigo_carrera, int horario_id, int instructor_id, int salon_id) {
         this.ciclo = ciclo;
-        this.cupoMaximo = cupoMaximo;
-        this.cupoMinimo = cupoMinimo;
+        this.cupo_maximo = cupo_maximo;
+        this.cupo_minimo = cupo_minimo;
         this.descripcion = descripcion;
-        this.codigoCarrera = codigoCarrera;
-        this.horarioId = horarioId;
-        this.instructorId = instructorId;
-        this.salonId = salonId;
+        this.codigo_carrera = codigo_carrera;
+        this.horario_id = horario_id;
+        this.instructor_id = instructor_id;
+        this.salon_id = salon_id;
     }
 
-    public int getCursoId() {
-        return cursoId;
+    public Curso(int curso_id, int ciclo, int cupo_maximo, int cupo_minimo, String descripcion, String codigo_carrera, int horario_id, int instructor_id, int salon_id) {
+        this.curso_id = curso_id;
+        this.ciclo = ciclo;
+        this.cupo_maximo = cupo_maximo;
+        this.cupo_minimo = cupo_minimo;
+        this.descripcion = descripcion;
+        this.codigo_carrera = codigo_carrera;
+        this.horario_id = horario_id;
+        this.instructor_id = instructor_id;
+        this.salon_id = salon_id;
     }
 
-    public void setCursoId(int cursoId) {
-        this.cursoId = cursoId;
+    public int getCurso_id() {
+        return curso_id;
+    }
+
+    public void setCurso_id(int curso_id) {
+        this.curso_id = curso_id;
     }
 
     public int getCiclo() {
@@ -53,20 +68,20 @@ public class Curso {
         this.ciclo = ciclo;
     }
 
-    public int getCupoMaximo() {
-        return cupoMaximo;
+    public int getCupo_maximo() {
+        return cupo_maximo;
     }
 
-    public void setCupoMaximo(int cupoMaximo) {
-        this.cupoMaximo = cupoMaximo;
+    public void setCupo_maximo(int cupo_maximo) {
+        this.cupo_maximo = cupo_maximo;
     }
 
-    public int getCupoMinimo() {
-        return cupoMinimo;
+    public int getCupo_minimo() {
+        return cupo_minimo;
     }
 
-    public void setCupoMinimo(int cupoMinimo) {
-        this.cupoMinimo = cupoMinimo;
+    public void setCupo_minimo(int cupo_minimo) {
+        this.cupo_minimo = cupo_minimo;
     }
 
     public String getDescripcion() {
@@ -77,41 +92,43 @@ public class Curso {
         this.descripcion = descripcion;
     }
 
-    public String getCodigoCarrera() {
-        return codigoCarrera;
+    public String getCodigo_carrera() {
+        return codigo_carrera;
     }
 
-    public void setCodigoCarrera(String codigoCarrera) {
-        this.codigoCarrera = codigoCarrera;
+    public void setCodigo_carrera(String codigo_carrera) {
+        this.codigo_carrera = codigo_carrera;
     }
 
-    public int getHorarioId() {
-        return horarioId;
+    public int getHorario_id() {
+        return horario_id;
     }
 
-    public void setHorarioId(int horarioId) {
-        this.horarioId = horarioId;
+    public void setHorario_id(int horario_id) {
+        this.horario_id = horario_id;
     }
 
-    public int getInstructorId() {
-        return instructorId;
+    public int getInstructor_id() {
+        return instructor_id;
     }
 
-    public void setInstructorId(int instructorId) {
-        this.instructorId = instructorId;
+    public void setInstructor_id(int instructor_id) {
+        this.instructor_id = instructor_id;
     }
 
-    public int getSalonId() {
-        return salonId;
+    public int getSalon_id() {
+        return salon_id;
     }
 
-    public void setSalonId(int salonId) {
-        this.salonId = salonId;
+    public void setSalon_id(int salon_id) {
+        this.salon_id = salon_id;
     }
 
     @Override
     public String toString() {
-        return "Curso{" + "cursoId=" + cursoId + ", ciclo=" + ciclo + ", cupoMaximo=" + cupoMaximo + ", cupoMinimo=" + cupoMinimo + ", descripcion=" + descripcion + ", codigoCarrera=" + codigoCarrera + ", horarioId=" + horarioId + ", instructorId=" + instructorId + ", salonId=" + salonId + '}';
+        return "Curso{" + "curso_id=" + curso_id + ", ciclo=" + ciclo + ", cupo_maximo=" + cupo_maximo + ", cupo_minimo=" + cupo_minimo + ", descripcion=" + descripcion + ", codigo_carrera=" + codigo_carrera + ", horario_id=" + horario_id + ", instructor_id=" + instructor_id + ", salon_id=" + salon_id + '}';
     }
+
+    
 
 }

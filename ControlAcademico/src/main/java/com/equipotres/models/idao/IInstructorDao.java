@@ -5,23 +5,18 @@
  */
 package com.equipotres.models.idao;
 
+
 import com.equipotres.models.domain.Instructor;
 import java.util.List;
 
 /**
  *
- * @author Carlos Adolfo Alvarez Crúz
+ * @author carlos
  */
 public interface IInstructorDao {
-    
     public List<Instructor> listar();
-    
     public Instructor encontrar(Instructor instructor);
-    
-    public int insertar(Instructor instructor);
-    
-    public int actualizar(Instructor instructor);
-    
-    public int eliminar(Instructor instructor);
-    
+    public int Insertar(Instructor instructor);
+    public int Actualizar(Instructor instructor);
+    public int Eliminar(Instructor instructor);
 }
