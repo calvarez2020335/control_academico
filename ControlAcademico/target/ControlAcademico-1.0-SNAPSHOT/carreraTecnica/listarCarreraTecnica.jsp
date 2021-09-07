@@ -9,12 +9,20 @@
 <link rel="stylesheet" href="../assets/css/bootstrap.css">
 <!DOCTYPE html>
 <html>
+
     <head>
+        <link rel="stylesheet" href="assets/css/style-css.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@1,200;1,500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../assets/css/style-css.css"/>
+        <script src="https://kit.fontawesome.com/f90d3bf50d.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Carrera Tecnica</title>
     </head>
     <body>
-          <header id="main-header" class="py-2 bg-info text-white" > 
+        <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
+        <header id="main-header" class="py-2 bg-info text-white" > 
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -23,7 +31,7 @@
                 </div>
             </div>
         </header> 
-    
+
         <section id="estudiantes">
             <div class="container">
                 <div class="row">
@@ -38,21 +46,22 @@
                                 </tr>
                             </thead>
                             <tbody>                
-                                    <c:forEach var="carreratecnica" items="${listadoCarreraTecnica}">
+                                <c:forEach var="carreratecnica" items="${listadoCarreraTecnica}">
                                     <tr>
                                         <td>${carreratecnica.codigoCarrera}</td>
                                         <td>${carreratecnica.nombre}</td>
                                         <td>
-                                             <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carreratecnica.codigoCarrera}">Eliminar</a>
+                                            <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carreratecnica.codigoCarrera}">Eliminar</a>
                                         </td>              
                                     </tr>
-                                    </c:forEach>                              
+                                </c:forEach>                              
                             </tbody>
                         </table>    
                     </div>
                 </div>
             </div>
-        </section>                      
+        </section>               
+        <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
         <script src="../assets/js/jquery-3.6.0.js"></script>
         <script src="../assets/js/bootstrap.bundle.js"></script>
     </body>

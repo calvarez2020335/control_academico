@@ -1,3 +1,9 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package com.equipotres.models.dao;
 
 import com.equipotres.db.Conexion;
@@ -12,9 +18,11 @@ import java.util.List;
 
 /**
  *
- * @author PANQUESITO
+ * @author Carlos Adolfo Alvarez Crúz
+ * @date 3/09/2021
+ * @time 01:10:36 PM
+ * Codigo tecnico: IN5BV
  */
-
 public class CursoDaoImpl implements ICursoDao{
 
     private static final String SQL_SELECT = "SELECT * FROM curso";

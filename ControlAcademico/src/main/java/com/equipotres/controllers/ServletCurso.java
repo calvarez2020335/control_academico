@@ -1,3 +1,9 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package com.equipotres.controllers;
 
 import com.equipotres.models.dao.CursoDaoImpl;
@@ -12,9 +18,11 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author PANQUESITO
+ * @author Carlos Adolfo Alvarez Crúz
+ * @date 3/09/2021
+ * @time 03:11:42 PM
+ * Codigo tecnico: IN5BV
  */
-
 @WebServlet("/ServletCurso")
 public class ServletCurso extends HttpServlet{
     

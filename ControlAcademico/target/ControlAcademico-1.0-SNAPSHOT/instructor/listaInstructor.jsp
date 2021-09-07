@@ -11,17 +11,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content = "width=device-width, initial-scale=1">
-
-         <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style-css.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@1,200;1,500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../assets/css/style-css.css"/>
+        <script src="https://kit.fontawesome.com/f90d3bf50d.js"></script>
+        <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
-        
-       
+
+
 
 
         <title>Listado de Instructores</title>
     </head>
     <body>
-        
+
+        <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
 
         <header id= "main-header" class="py-2 bg-info text-white">
             <div class="container">
@@ -59,7 +65,7 @@
                                     <th>Dirección</th>
                                     <th>Telefono</th>
                                     <th></th>
-                                    
+
                                     <th></th>
                                 </tr>
                             </thead>
@@ -79,20 +85,20 @@
 
                             </tbody>
                         </table>
-                        
-            </div>
+
+                    </div>
 
 
-        </div>
+                </div>
 
 
-    </section>
+        </section>
 
 
+        <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
 
 
-    
-    <script src="../assets/js/jquery-3.6.0.js"></script>
-    <script src="../assets/js/bootstrap.bundle.js"></script>
-</body>
+        <script src="../assets/js/jquery-3.6.0.js"></script>
+        <script src="../assets/js/bootstrap.bundle.js"></script>
+    </body>
 </html>
