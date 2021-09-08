@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.equipotres.models.domain;
 
 /**
@@ -11,7 +10,7 @@ package com.equipotres.models.domain;
  * @author carlos
  */
 public class Instructor {
-    private int idInstructor;
+    private int instructor_id;
     private String apellidos;
     private String nombres;
     private String direccion;
@@ -20,8 +19,10 @@ public class Instructor {
     public Instructor() {
     }
 
-    public Instructor(int idInstructor) {
-        this.idInstructor = idInstructor;
+    
+    
+    public Instructor(int instructor_id) {
+        this.instructor_id = instructor_id;
     }
 
     public Instructor(String apellidos, String nombres, String direccion, String telefono) {
@@ -31,20 +32,20 @@ public class Instructor {
         this.telefono = telefono;
     }
 
-    public Instructor(int idInstructor, String apellidos, String nombres, String direccion, String telefono) {
-        this.idInstructor = idInstructor;
+    public Instructor(int instructor_id, String apellidos, String nombres, String direccion, String telefono) {
+        this.instructor_id = instructor_id;
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.direccion = direccion;
         this.telefono = telefono;
     }
 
-    public int getIdInstructor() {
-        return idInstructor;
+    public int getInstructor_id() {
+        return instructor_id;
     }
 
-    public void setIdInstructor(int idInstructor) {
-        this.idInstructor = idInstructor;
+    public void setInstructor_id(int instructor_id) {
+        this.instructor_id = instructor_id;
     }
 
     public String getApellidos() {
@@ -81,8 +82,6 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return "Instructor{" + "idInstructor=" + idInstructor + ", apellidos=" + apellidos + ", nombres=" + nombres + ", direccion=" + direccion + ", telefono=" + telefono + '}';
-    }
-    
-    
+        return "Instructor{" + "instructor_id=" + instructor_id + ", apellidos=" + apellidos + ", nombres=" + nombres + ", direccion=" + direccion + ", telefono=" + telefono + '}';
+    }  
 }

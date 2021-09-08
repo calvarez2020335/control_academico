@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.equipotres.controllers;
+
 import com.equipotres.models.dao.AsigAlumnoDaoImpl;
 import com.equipotres.models.domain.AsignacionAlumno;
 import javax.servlet.http.HttpServlet;
@@ -20,16 +20,13 @@ import java.io.IOException;
  *
  * @author Josué Daniel Marroquín Hernández <jmarroquin-2020296@kinal.edu.gt>
  * @date 01-sep-2021
- * @time 11:24:26
- * Codigo Tecnico: IN5BV
- * Carnet: 2020296
+ * @time 11:24:26 Codigo Tecnico: IN5BV Carnet: 2020296
  */
-
 @WebServlet("/ServletAsigAlumno")
-public class ServletAsigAlumno extends HttpServlet{
-    
-     @Override
-     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+public class ServletAsigAlumno extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String accion = request.getParameter("accion");
         if (accion != null) {
@@ -43,19 +40,19 @@ public class ServletAsigAlumno extends HttpServlet{
             }
         }
     }
-     
-     private void listarAsigAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
-         List<AsignacionAlumno> listaAsigAlumno = new AsigAlumnoDaoImpl().listar();
+
+    private void listarAsigAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        List<AsignacionAlumno> listaAsigAlumno = new AsigAlumnoDaoImpl().listar();
 
         HttpSession seccion = request.getSession();
 
         seccion.setAttribute("listaAsigAlumnos", listaAsigAlumno);
         response.sendRedirect("asignacionAlumno/asigancionAlumno.jsp");
-         
-     }
-     
-     private void eliminarAsigAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
-       //Recuperar Id Asigancion Alumno eliminado
+
+    }
+
+    private void eliminarAsigAlumno(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //Recuperar Id Asigancion Alumno eliminado
         String asigancionId = (request.getParameter("asigancionId"));
 
         //Crear objeto tipo Asiganacion Alumno
@@ -66,7 +63,6 @@ public class ServletAsigAlumno extends HttpServlet{
 
         //Llamar al Metodo Listar Asigancion Alumno
         listarAsigAlumno(request, response);
-     }
-     
+    }
 
 }
