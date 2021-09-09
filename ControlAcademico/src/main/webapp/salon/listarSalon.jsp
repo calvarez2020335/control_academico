@@ -73,7 +73,7 @@
                 </div>
             </div>
         </div>
-
+<!-- comentario prueba-->
 
 
 
@@ -94,11 +94,6 @@
                                             <i class="fa fa-plus"></i> Agregar Salon
                                         </a>
                                     </th>
-
-
-
-
-
                                 </tr>
                             </thead>
                             <tbody>                
