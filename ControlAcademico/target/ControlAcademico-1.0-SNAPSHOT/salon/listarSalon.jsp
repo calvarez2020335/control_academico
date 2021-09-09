@@ -25,29 +25,80 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <header id="main-header" class="py-2 bg-info text-white" > 
+
+        <header id="main-header" class="py-2 bg-dark bg-gradient bg-opacity-75 text-info text-center" > 
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>Control de salones</h1>
+                        <h1><i class="fas fa-chalkboard-teacher"></i> Salones</h1>
                     </div>
                 </div>
             </div>
         </header> 
 
-        <section id="estudiantes">
-            <div class="container">
-                <div class="row">
 
-                    <div class="col-9">
-                        <table class="table table-striped">
+        <div class="modal fade" id="agregar-salon-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Salon </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletSalon">
+                        <div class="modal-body">
+
+                            <div class="mb-3">
+                                <label for="capacidad" class="form-label">Capacidad del Salon</label>
+                                <input type="number" id="capacidad" name="capacidad" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label form="descripcion" class="form-label" >Descripcion Del Salon</label>
+                                <input type="text" id="descripcion" name="descripcion" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombreSalon" class="form-label">Nombre Del Salon</label>
+                                <input type="text" id="nombreSalon" name="nombreSalon" class="form-control">                         
+                            </div>
+
+                            <input type="hidden"  name="accion" value="insertar">                           
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <section id="salones">
+            <div class="conteiner">
+                <div class="row">
+                    <div class="col-12 ">
+                        <table class="table table-dark table-sm border-primary text-center fs-5">
                             <thead class="table-dark">
                                 <tr>
                                     <th>#</th>
-                                    <th>capacida completo</th>
-                                    <th>descripcion</th>
-                                    <th>nombre salon</th>
-                                    <th>-</th>
+                                    <th>Capacida</th>
+                                    <th>Descripcion Del Salon</th>
+                                    <th>Nombre De Salon</th>
+                                    <th colspan="3" >
+                                        <a class="btn btn-primary bnt-block w-50  rounded-pill fs-6" data-bs-toggle="modal" data-bs-target="#agregar-salon-modal" class="btn btn-block">
+                                            <i class="fa fa-plus"></i> Agregar Salon
+                                        </a>
+                                    </th>
+
+
+
+
+
                                 </tr>
                             </thead>
                             <tbody>                
@@ -59,8 +110,16 @@
                                         <td>${salon.descripcion}</td>
                                         <td>${salon.nombreSalon}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/ServletSalon?accion=eliminar&salonId=${salon.salonId}">Eliminar</a>
+                                            <button type="button" class="btn btn-outline-danger rounded-pill">
+                                                <a href="${pageContext.request.contextPath}/ServletSalon?accion=eliminar&salonId=${salon.salonId}" class="text-decoration-none text-white"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                                            </button>
                                         </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-success rounded-pill">
+                                                <a href="${pageContext.request.contextPath}/ServletSalon?accion=editar&salonId=${salon.salonId}" class="text-decoration-none text-white"><i class="far fa-edit"></i> Editar</a>
+                                            </button>
+                                        </td>
+
 
                                     </tr>
                                 </c:forEach>
@@ -71,23 +130,13 @@
 
                     </div>
 
-                    <div class="col-3">
-                        <div class="card-body">
-
-                            <h3>cantidad de salones</h3>
-                            <h4 class="display-4"> 
-
-                            </h4>
-                        </div>
-
-                    </div>
-
                 </div>
 
             </div>
 
 
         </section>
+
 
         <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
 

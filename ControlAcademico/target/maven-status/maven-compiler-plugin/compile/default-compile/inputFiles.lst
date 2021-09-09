@@ -1,30 +1,30 @@
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\IAsignacionAlumnoDao.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Salon.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\CarreraTecnicaDaoImpl.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletInstructor.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\AlumnoDaoImpl.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletCurso.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Alumno.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\ISalonDao.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletAsigAlumno.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\CarreraTecnica.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletCarreraTecnica.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\ICursoDao.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\IAlumnoDao.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\AsigAlumnoDaoImpl.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\IInstructorDao.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\CursoDaoImpl.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\InstructorDaoImpl.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletSalon.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\IHorarioDao.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\SalonDaoImpl.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletAlumno.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\db\Conexion.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletHorario.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\dao\HorarioDaoImpl.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\idao\ICarreraTecnicaDao.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\AsignacionAlumno.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Instructor.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\system\Principal.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Curso.java
-D:\Clases\Taller\Cuarta unidad\Proyecto Control Académico\ControlAcademico\src\main\java\com\equipotres\models\domain\Horario.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletAlumno.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\dao\SalonDaoImpl.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\dao\AlumnoDaoImpl.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\domain\Curso.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\dao\AsigAlumnoDaoImpl.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\dao\InstructorDaoImpl.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\dao\CarreraTecnicaDaoImpl.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\db\Conexion.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\domain\Instructor.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\idao\ISalonDao.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\idao\IHorarioDao.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\idao\IAlumnoDao.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\system\Principal.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletInstructor.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\dao\CursoDaoImpl.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\domain\Horario.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\idao\IAsignacionAlumnoDao.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\domain\AsignacionAlumno.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletSalon.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\domain\Salon.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\domain\CarreraTecnica.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletCurso.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\dao\HorarioDaoImpl.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\idao\ICursoDao.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\domain\Alumno.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\idao\IInstructorDao.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletCarreraTecnica.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletAsigAlumno.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\models\idao\ICarreraTecnicaDao.java
+C:\Users\ACER\Desktop\github_control_academico\control_academico\ControlAcademico\src\main\java\com\equipotres\controllers\ServletHorario.java
