@@ -61,7 +61,7 @@ public class ServletAlumno extends HttpServlet{
         List<Alumno> listarAlumno = new AlumnoDaoImpl().listar();
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listaAlumno", listarAlumno);
-        response.sendRedirect("alumno/listarAlumno.jsp");
+        response.sendRedirect("alumno/listar-alumno.jsp");
         
     }
     

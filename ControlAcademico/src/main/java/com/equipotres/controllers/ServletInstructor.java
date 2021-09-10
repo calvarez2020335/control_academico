@@ -46,7 +46,7 @@ private void listarInstructor(HttpServletRequest request,HttpServletResponse res
     HttpSession sesion = request.getSession();
     sesion.setAttribute("listadoInstructores", listaInstructor);
     
-    response.sendRedirect("instructor/listaInstructor.jsp");
+    response.sendRedirect("instructor/lista-instructor.jsp");
 
  }
 

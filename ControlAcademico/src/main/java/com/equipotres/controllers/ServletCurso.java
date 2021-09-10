@@ -48,7 +48,7 @@ public class ServletCurso extends HttpServlet{
         HttpSession seccion = request.getSession();
         
         seccion.setAttribute("listaCurso", listaCurso);
-        response.sendRedirect("curso/listarCurso.jsp");
+        response.sendRedirect("curso/listar-curso.jsp");
         
     }
     

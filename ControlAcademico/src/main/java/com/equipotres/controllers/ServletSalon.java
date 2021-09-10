@@ -61,7 +61,7 @@ public class ServletSalon extends HttpServlet {
         List<Salon> listaSalones = new SalonDaoImpl().listar();
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoSalones", listaSalones);
-        response.sendRedirect("salon/listarSalon.jsp");
+        response.sendRedirect("salon/listar-salon.jsp");
     }
 
 }

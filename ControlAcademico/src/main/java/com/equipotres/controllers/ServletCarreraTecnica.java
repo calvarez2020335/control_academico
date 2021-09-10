@@ -60,7 +60,7 @@ public class ServletCarreraTecnica extends HttpServlet {
         List<CarreraTecnica> listarCarreraTecnica = new CarreraTecnicaDaoImpl().listar();
         HttpSession sesion = request.getSession();
         sesion.setAttribute("listadoCarreraTecnica", listarCarreraTecnica);
-        response.sendRedirect("carreraTecnica/listarCarreraTecnica.jsp");
+        response.sendRedirect("carreraTecnica/listar-carrera-tecnica.jsp");
     }
 
 }
