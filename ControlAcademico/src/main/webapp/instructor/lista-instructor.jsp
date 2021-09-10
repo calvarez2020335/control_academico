@@ -27,12 +27,12 @@
     </head>
 
     <body>
-
-
+        
+        
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
 
         <header id= "main-header" class="py-2 bg-black text-white">
-
+            
             <div class="container">
 
                 <div class="row">
@@ -56,53 +56,56 @@
 
         </header>
         <div class="p-3 mb-2 bg-black text-white">
-            <section id="instructores">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-9">
-                            <table class="table table-dark">
+        <section id="instructores">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9">
+                       <table class="table table-dark">
+                            
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Dirección</th>
+                                    <th>Telefono</th>
+                                    <th></th>
 
-                                <thead class="table-dark">
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="instructor" items="${listadoInstructores}">
                                     <tr>
-                                        <th>#</th>
-                                        <th>Nombre Completo</th>
-                                        <th>Dirección</th>
-                                        <th>Telefono</th>
-                                        <th></th>
-
-                                        <th></th>
+                                        <td>${instructor.instructor_id}</td>
+                                        <td>${instructor.apellidos} ${instructor.nombres}</td>
+                                        <td>${instructor.direccion}</td>
+                                        <td>${instructor.telefono}</td>
+                                        <td>                                 
+                                        <button class="btn btn-danger" href="${pageContext.request.contextPath}/ServletInstructor?accion=eliminar&instructor_id=${instructor.instructor_id}"><i class="fas fa-virus-slash"></i>Eliminar</button>
+                                        </td>
+                                        <td >
+                                            <a class="btn btn-primary" href="${pageContext.request.contextPath}/ServletInstructor?accion=editar&"><i class="fas fa-highlighter"></i>Editar</a>
+                                        </td>
+                                        <td >
+                                            <a class="btn btn-info" href="${pageContext.request.contextPath}/ServletInstructor?accion=agregar&"><i class="fas fa-user-plus"></i>Agregar</a>
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach var="instructor" items="${listadoInstructores}">
-                                        <tr>
-                                            <td>${instructor.instructor_id}</td>
-                                            <td>${instructor.apellidos} ${instructor.nombres}</td>
-                                            <td>${instructor.direccion}</td>
-                                            <td>${instructor.telefono}</td>
-                                            <td>                                 
-                                                <button class="btn btn-primary" href="${pageContext.request.contextPath}/ServletInstructor?accion=eliminar&instructor_id=${instructor.instructor_id}">Eliminar</button>
-                                            </td>
-                                            <td >
-                                                <a class="btn btn-danger" href="${pageContext.request.contextPath}/ServletInstructor?accion=editar&">Editar</a>
-                                            </td>
-                                        </tr>
 
-                                    </c:forEach>
+                                </c:forEach>
 
-                                </tbody>
-                            </table>
-
-                        </div>
-
+                            </tbody>
+                        </table>
 
                     </div>
 
 
-            </section>
+                </div>
 
 
-            <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
+        </section>
+
+
+        <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
 
         </div>
         <script src="../assets/js/jquery-3.6.0.js"></script>
