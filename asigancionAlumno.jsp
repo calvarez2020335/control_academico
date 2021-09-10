@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../assets/css/style-css.css"/>
 
         <!--Bootstrap CSS -->
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -19,9 +20,9 @@
         <title>Agigancion de Alumnos</title>
     </head>
     <body>
-        
+
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        
+
         <header id="main-header" class="py-2 bg-dark text-info text-center">
             <div class="conteiner">
                 <div class="row">
@@ -36,7 +37,7 @@
         <section id="asigancionAlumnos">
             <div class="conteiner">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 bg-dark">
                         <table class="table table-dark table-sm border-primary text-center"> 
                             <thead class="table-dark">
                                 <tr>
@@ -77,8 +78,9 @@
             </div>
 
         </section>
-        
+
         <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
+
 
         <script src="../assets/js/jquery-3.6.0.js"></script>
         <script src="../assets/js/bootstrap.bundle.js"></script>
