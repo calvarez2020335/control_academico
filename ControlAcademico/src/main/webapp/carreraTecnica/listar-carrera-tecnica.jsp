@@ -22,7 +22,7 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <header id="main-header" class="py-2 bg-info text-white" > 
+        <header id="main-header" class="py-2 bg-dark bg-gradient bg-opacity-75 text-info text-center" > 
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -36,13 +36,17 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-9">
-                        <table class="table table-striped">
+                    <div class="col-12">
+                        <table class="table table-dark table-sm border-primary text-center fs-5">
                             <thead class="table-dark">
                                 <tr>
-                                    <th>#</th>
+                                    <th></th>
                                     <th>Nombre de la carrera</th>
-                                    <th>-</th>
+                                    <th colspan="3" >
+                                        <a class="btn btn-primary bnt-block w-50  rounded-pill fs-6" data-bs-toggle="modal" data-bs-target="#agregar-carreraTecnica-modal" class="btn btn-block">
+                                            <i class="fa fa-plus"></i> Agregar carrera 
+                                        </a>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>                
@@ -51,8 +55,15 @@
                                         <td>${carreratecnica.codigoCarrera}</td>
                                         <td>${carreratecnica.nombre}</td>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carreratecnica.codigoCarrera}">Eliminar</a>
-                                        </td>              
+                                            <button type="button" class="btn btn-outline-danger rounded-pill">
+                                                <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carrera_tecnica.codigo_carrera}" class="text-decoration-none text-white"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-outline-success rounded-pill">
+                                                <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=editar&codigo_carrera=${carrera_tecnica.codigo_carrera}" class="text-decoration-none text-white"><i class="far fa-edit"></i> Editar</a>
+                                            </button>
+                                        </td>               
                                     </tr>
                                 </c:forEach>                              
                             </tbody>
