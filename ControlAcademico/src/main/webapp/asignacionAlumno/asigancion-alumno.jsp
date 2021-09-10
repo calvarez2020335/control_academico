@@ -24,7 +24,7 @@
 
         <title>Agigancion de Alumnos</title>
     </head>
-    <body>
+        <body>
 
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
 
@@ -42,7 +42,7 @@
         <section id="asigancionAlumnos">
             <div class="conteiner">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 bg-dark">
                         <table class="table table-dark table-sm border-primary text-center"> 
                             <thead class="table-dark">
                                 <tr>
@@ -85,6 +85,7 @@
         </section>
 
         <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
+
 
         <script src="../assets/js/jquery-3.6.0.js"></script>
         <script src="../assets/js/bootstrap.bundle.js"></script>
