@@ -37,7 +37,7 @@
                     <div class="col-12">
 
                         <h1>
-                            <i class="fas fa-id-badge"></i> Control De Cursos
+                            <i class="fas fa-book"></i> Control De Cursos
                         </h1>
                     </div>
                 </div>

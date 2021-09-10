@@ -26,56 +26,116 @@
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
-        <header id="main-header" class="py-2 bg-info text-white" > 
+        <header id= "main-header" class="py-2 bg-black text-white text-center">
+
             <div class="container">
+
                 <div class="row">
+
                     <div class="col-12">
-                        <h1>Control de horarios</h1>
+
+                        <h1>
+                            <i class="fa fa-calendar"></i> Control De horarios
+                        </h1>
                     </div>
                 </div>
             </div>
         </header> 
 
-        <section id="estudiantes">
-            <div class="container">
-                <div class="row">
 
-                    <div class="col-9">
-                        <table class="table table-striped">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>#</th>
-                                    <th>Horario Final</th>
-                                    <th>Horario Inicio</th>
-                                    <th>-</th>
-                                </tr>
-                            </thead>
-                            <tbody>                
+        <div class="modal fade" id="agregar-horario-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Horario </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletAlumno">
+                        <div class="modal-body">
 
-                                <c:forEach var="horario" items="${listaHorario}">
+                            <div class="mb-3">
+                                <label for="capacidad" class="form-label">...</label>
+                                <input type="number" id="capacidad" name="capacidad" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label form="descripcion" class="form-label" >...</label>
+                                <input type="text" id="descripcion" name="descripcion" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombreSalon" class="form-label">...</label>
+                                <input type="text" id="nombreSalon" name="nombreSalon" class="form-control">                         
+                            </div>
+
+                            <input type="hidden"  name="accion" value="insertar">                           
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="p-3 mb-2 bg-black text-white">
+            <section id="estudiantes">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <table class="table table table-dark table-striped table-bordered border-light text-center">
+                                <thead class="table-dark">
                                     <tr>
-                                        <td>${horario.horarioId}</td>
-                                        <td>${horario.horarioFinal} </td>
-                                        <td>${horario.horarioInicio}</td>
-                                        <td>
-                                            <a href="${pageContext.request.contextPath}/ServletHorario?accion=eliminar&horarioId=${horario.horarioId}">Eliminar</a>
-                                        </td>
+                                        <th>#</th>
+                                        <th>Horario Final</th>
+                                        <th>Horario Inicio</th>
+                                        <th colspan="3">
 
+                                            <a class="btn btn-outline-light btn-dark bnt-block w-50  rounded-pill fs-6" data-bs-toggle="modal" data-bs-target="#agregar-horario-modal" class="btn btn-block">
+                                                <i class="fa fa-plus"></i> Agregar Horario
+                                            </a>
+
+                                        </th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>                
+
+                                    <c:forEach var="horario" items="${listaHorario}">
+                                        <tr>
+                                            <td>${horario.horarioId}</td>
+                                            <td>${horario.horarioFinal} </td>
+                                            <td>${horario.horarioInicio}</td>
+                                            <td>
+                                                <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/ServletHorario?accion=eliminar&horarioId=${horario.horarioId}">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/ServletHorario?accion=editar&horarioId=${horario.horarioId}">
+                                                    <i class="far fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
 
 
-                            </tbody>
-                        </table>    
+                                </tbody>
+                            </table>    
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
-
-        </section>
+            </section>
+        </div>
 
         <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
 
