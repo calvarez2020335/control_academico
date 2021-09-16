@@ -20,15 +20,15 @@
         <link rel="stylesheet" href="../assets/css/style-css.css"/>
         <script src="https://kit.fontawesome.com/f90d3bf50d.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/style-css.css">
+        <link rel="stylesheet" href="./assets/css/style-css.css">
         <!-- bootsrap -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap.css">
 
         <title>Editar Alumno</title>
 
     </head>
     <body>
-        <jsp:include page="../WEB-INF/paginas/comunes/cabecera.jsp"/>
+        <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
 
         <section id="action" class="py-4 mb-4 bg-light">
             <div class="container">
@@ -90,10 +90,10 @@
             </div>
         </main>
 
-        <jsp:include page="../WEB-INF/paginas/comunes/pie-pagina.jsp"/>
+        <jsp:include page="/WEB-INF/paginas/comunes/pie-pagina.jsp"/>
 
-        <script src="../assets/js/jquery-3.6.0.js"></script>
-        <script src="../assets/js/bootstrap.bundle.js"></script>
+        <script src="./assets/js/jquery-3.6.0.js"></script>
+        <script src="./assets/js/bootstrap.bundle.js"></script>
 
     </body>
 </html>

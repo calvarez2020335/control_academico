@@ -75,16 +75,15 @@ public class AlumnoDaoImpl implements IAlumnoDao {
 
         try {
             conn = Conexion.getConnection();
-            pstmt = conn.prepareStatement(SQL_SELECT);
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_CARNE);
+            pstmt.setString(1, alumno.getCarne());
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                String carne = rs.getString("carne");
                 String apellidos = rs.getString("apellidos");
                 String nombres = rs.getString("nombres");
                 String email = rs.getString("email");
 
-                alumno.setCarne(carne);
                 alumno.setApellidos(apellidos);
                 alumno.setNombres(nombres);
                 alumno.setEmail(email);

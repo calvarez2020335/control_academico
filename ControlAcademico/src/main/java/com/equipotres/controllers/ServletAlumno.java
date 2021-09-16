@@ -54,6 +54,7 @@ public class ServletAlumno extends HttpServlet {
         Alumno alumno = new Alumno(Carne, Apellidos, Nombres, Email);
         
         int registrosActualizados = new AlumnoDaoImpl().actualizar(alumno);
+        System.out.println("alumno actualizado:" + registrosActualizados);
         
         listarAlumno(request, response);
         
@@ -105,7 +106,7 @@ public class ServletAlumno extends HttpServlet {
         
         request.setAttribute("alumno", alumno);
         
-        request.getRequestDispatcher("alumno/editr-alumno.jsp").forward(request, response);
+        request.getRequestDispatcher("alumno/editar-alumno.jsp").forward(request, response);
         
         
     }
@@ -116,6 +117,7 @@ public class ServletAlumno extends HttpServlet {
         Alumno alumno = new Alumno(carne);
 
         int registroEliminado = new AlumnoDaoImpl().eliminar(alumno);
+        System.out.println("alumno eliminado" + registroEliminado);
 
         listarAlumno(request, response);
 
