@@ -23,7 +23,7 @@
         <title>Listado de Salones</title>
 
     </head>
-    <body>
+    <body class="bg-secondary bg-opacity-75 bg-gradient">
         <jsp:include page="/WEB-INF/paginas/comunes/cabecera.jsp"/>
 
         <header id="main-header" class="py-2 bg-dark bg-gradient bg-opacity-75 text-info text-center" > 
@@ -49,17 +49,17 @@
 
                             <div class="mb-3">
                                 <label for="capacidad" class="form-label">Capacidad del Salon</label>
-                                <input type="number" id="capacidad" name="capacidad" class="form-control">
+                                <input type="number" id="capacidad" name="capacidad" class="form-control" value="${salon.capacidad}">
                             </div>
 
                             <div class="mb-3">
                                 <label form="descripcion" class="form-label" >Descripcion Del Salon</label>
-                                <input type="text" id="descripcion" name="descripcion" class="form-control">
+                                <input type="text" id="descripcion" name="descripcion" class="form-control" value="${salon.descripcion}">
                             </div>
 
                             <div class="mb-3">
                                 <label for="nombreSalon" class="form-label">Nombre Del Salon</label>
-                                <input type="text" id="nombreSalon" name="nombreSalon" class="form-control">                         
+                                <input type="text" id="nombreSalon" name="nombreSalon" class="form-control" value="${salon.nombreSalon}">                         
                             </div>
 
                             <input type="hidden"  name="accion" value="insertar">                           
@@ -73,16 +73,16 @@
                 </div>
             </div>
         </div>
-<!-- comentario prueba-->
+        <!-- comentario prueba-->
 
 
 
 
         <section id="salones">
-            <div class="conteiner">
+            <div class="conteiner pt-2">
                 <div class="row">
-                    <div class="col-12 ">
-                        <table class="table table-dark table-sm border-primary text-center fs-5">
+                    <div class="col-12">
+                        <table class="table table-dark table-sm border-primary table-striped text-center fs-5">
                             <thead class="table-dark">
                                 <tr>
                                     <th>#</th>

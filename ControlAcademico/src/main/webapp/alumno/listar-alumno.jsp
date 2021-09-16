@@ -44,6 +44,10 @@
             </div>
         </header>
 
+        <!--
+            Crear un formulario con la estructura que tuvimos en clase o como esta estructura y llamar a los servlets
+            Se pueden guiar con la gravacion de la clase del dia miercoles, o pueden buscar en la documentación de boostrap
+        -->
 
         <div class="modal fade" id="agregar-alumno-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -56,20 +60,25 @@
                         <div class="modal-body">
 
                             <div class="mb-3">
-                                <label for="capacidad" class="form-label">...</label>
-                                <input type="number" id="capacidad" name="capacidad" class="form-control">
+                                <label for="carne" class="form-label">Carnet</label>
+                                <input type="number" id="carne" name="carne" class="form-control">
                             </div>
 
                             <div class="mb-3">
-                                <label form="descripcion" class="form-label" >...</label>
-                                <input type="text" id="descripcion" name="descripcion" class="form-control">
+                                <label form="apellidos" class="form-label" >Apellidos</label>
+                                <input type="text" id="apellidos" name="apellidos" class="form-control">
                             </div>
 
                             <div class="mb-3">
-                                <label for="nombreSalon" class="form-label">...</label>
-                                <input type="text" id="nombreSalon" name="nombreSalon" class="form-control">                         
+                                <label for="nombres" class="form-label">Nombres</label>
+                                <input type="text" id="nombres" name="nombres" class="form-control">                         
                             </div>
 
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-control">                         
+                            </div>
+                            
                             <input type="hidden"  name="accion" value="insertar">                           
 
                         </div>

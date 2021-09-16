@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/inicio.jsp">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/ServletSalon?accion=listar">Salones</a>
@@ -31,6 +31,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/ServletAsigAlumno?accion=listar">Asignar Alumno</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/index.jsp">Cerrar Sesion</a>
                 </li>
             </ul>
         </div>

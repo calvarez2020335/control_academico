@@ -25,7 +25,10 @@ public class SalonDaoImpl implements ISalonDao {
 
     private static String SQL_SELECT = "SELECT salon_id ,capacidad,descripcion,nombre_salon FROM salon";
     private static String SQL_DELETE = "DELETE FROM salon WHERE salon_id = ?";
-
+    private static String SQL_INSERT = "INSERT INTO salon (capacidad, descripcion, nombre_salon) VALUES(?,?,?);";
+    private static final String SQL_SELECT_BY_ID = "SELECT salon_id , capacidad, descripcion, nombre_salon FROM salon WHERE salon_id = ?";
+    private static final String SQL_UPDATE = "UPDATE salon SET capacidad = ?, descripcion = ?, nombre_salon = ? WHERE salon_id = ?";
+    
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -67,17 +70,83 @@ public class SalonDaoImpl implements ISalonDao {
 
     @Override
     public Salon encontrar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setInt(1, salon.getSalonId());
+            System.out.println(pstmt.toString());
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                int capacidad = rs.getInt("capacidad");
+                String descripcion = rs.getString("descripcion");
+                String nombreSalon = rs.getString("nombre_salon");
+
+                salon.setCapacidad(capacidad);
+                salon.setDescripcion(descripcion);
+                salon.setNombreSalon(nombreSalon);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+
+        return salon;
     }
 
     @Override
     public int insertar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int row = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setInt(1, salon.getCapacidad());
+            pstmt.setString(2, salon.getDescripcion());
+            pstmt.setString(3, salon.getNombreSalon());
+
+            System.out.println(pstmt.toString());
+            row = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return row;
     }
 
     @Override
     public int actualizar(Salon salon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int row = 0;
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setInt(1, salon.getCapacidad());
+            pstmt.setString(2, salon.getDescripcion());
+            pstmt.setString(3, salon.getNombreSalon());
+            pstmt.setInt(4, salon.getSalonId());
+
+            System.out.println(pstmt.toString());
+            row = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return row;
     }
 
     @Override
@@ -91,9 +160,9 @@ public class SalonDaoImpl implements ISalonDao {
             rows = pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace(System.out);
-        } finally{
-        Conexion.close(pstmt);
-        Conexion.close(conn);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
         }
         return rows;
     }

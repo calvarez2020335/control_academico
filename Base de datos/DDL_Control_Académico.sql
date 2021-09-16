@@ -252,3 +252,17 @@ INSERT INTO asignacion_alumno(asignacion_id, carne, curso_id, fecha_asignacion)
 VALUES("Alum7", "2020261", 1, current_date());
 
 SELECT * FROM asignacion_alumno;
+
+/**********************************************************************
+LOGIN
+***********************************************************************/
+DROP TABLE IF EXISTS Usuario;
+CREATE TABLE IF NOT EXISTS Usuario(
+	user VARCHAR(45) not null,
+    pass VARCHAR(45) not null,
+    PRIMARY KEY(user)
+);
+
+INSERT INTO Usuario(user, pass) VALUES ("root","admin");
+INSERT INTO Usuario(user, pass) VALUES ("admin","root");
+SELECT * FROM Usuario;
