@@ -47,7 +47,7 @@ public class ServletAsigAlumno extends HttpServlet {
         HttpSession seccion = request.getSession();
 
         seccion.setAttribute("listaAsigAlumnos", listaAsigAlumno);
-        response.sendRedirect("asignacionAlumno/asigancionAlumno.jsp");
+        response.sendRedirect("asignacionAlumno/asigancion-alumno.jsp");
 
     }
 

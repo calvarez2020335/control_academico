@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3">
-                        <a href="salon/listarSalon.jsp" class="btn btn-danger btn-block">
+                        <a href="javascript:history.back()" class="btn btn-danger btn-block">
                             <i class="fa fa-arrow-left"></i> Regresar A Salones
                         </a>
 
