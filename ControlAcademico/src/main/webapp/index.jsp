@@ -18,7 +18,7 @@
                             <input type="text" class="form-control" name="txtnom" placeholder="Ingrese su Usuario">
                         </div>
                         <div class="form-group mx-sm-4 pb-3">
-                            <input type="text" class="form-control" name="txtpass" placeholder="Ingrese su Contraseña">
+                            <input type="password" class="form-control" name="txtpass" placeholder="Ingrese su Contraseña">
                         </div>
                         <div class="form-group mx-sm-4 pb-2">
                             <input type="submit" class="btn btn-block ingresar" name="accion" value="Ingresar">
