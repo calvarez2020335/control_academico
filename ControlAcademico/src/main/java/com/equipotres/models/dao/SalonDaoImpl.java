@@ -23,9 +23,9 @@ import java.util.List;
  */
 public class SalonDaoImpl implements ISalonDao {
 
-    private static String SQL_SELECT = "SELECT salon_id ,capacidad,descripcion,nombre_salon FROM salon";
-    private static String SQL_DELETE = "DELETE FROM salon WHERE salon_id = ?";
-    private static String SQL_INSERT = "INSERT INTO salon (capacidad, descripcion, nombre_salon) VALUES(?,?,?);";
+    private static final String SQL_SELECT = "SELECT salon_id ,capacidad,descripcion,nombre_salon FROM salon";
+    private static final String SQL_DELETE = "DELETE FROM salon WHERE salon_id = ?";
+    private static final String SQL_INSERT = "INSERT INTO salon (capacidad, descripcion, nombre_salon) VALUES(?,?,?);";
     private static final String SQL_SELECT_BY_ID = "SELECT salon_id , capacidad, descripcion, nombre_salon FROM salon WHERE salon_id = ?";
     private static final String SQL_UPDATE = "UPDATE salon SET capacidad = ?, descripcion = ?, nombre_salon = ? WHERE salon_id = ?";
     

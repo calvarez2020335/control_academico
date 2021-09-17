@@ -38,6 +38,8 @@ CREATE TABLE carrera_tecnica(
     PRIMARY KEY(codigo_carrera)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+SELECT codigo_carrera,nombre FROM carrera_tecnica WHERE codigo_carrera = "DI5AM";
+
 /**********************************************************************
 TABLE instructor
 ***********************************************************************/
@@ -70,16 +72,24 @@ CREATE TABLE curso(
     PRIMARY KEY (curso_id),
 	CONSTRAINT FK_curso_carrera
         FOREIGN KEY (codigo_carrera)
-        REFERENCES carrera_tecnica(codigo_carrera),
+        REFERENCES carrera_tecnica(codigo_carrera)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
 	CONSTRAINT FK_curso_horario
 		FOREIGN KEY (horario_id)
-		REFERENCES horario (horarioId),
+		REFERENCES horario (horarioId)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
 	CONSTRAINT FK_curso_instructor
 		FOREIGN KEY (instructor_id)
-        REFERENCES instructor (instructor_id),
+        REFERENCES instructor (instructor_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
 	CONSTRAINT FK_curso_salon
 		FOREIGN KEY (salon_id)
         REFERENCES salon (salon_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /**********************************************************************
@@ -109,10 +119,14 @@ CREATE TABLE asignacion_alumno(
     PRIMARY KEY (asignacion_id),
 	CONSTRAINT FK_asignacion_carne
 		FOREIGN KEY (carne)
-        REFERENCES alumno (carne),
+        REFERENCES alumno (carne)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
 	CONSTRAINT FK_asignacion_curso
 		FOREIGN KEY (curso_id)
         REFERENCES curso(curso_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /**********************************************************************
@@ -135,6 +149,8 @@ INSERT INTO salon (capacidad, descripcion, nombre_salon)
 VALUES(25, "Salon de Artes", "Salon-A1");
 select * from salon;
 
+UPDATE salon set capacidad = 0, descripcion = "", nombre_salon = "" WHERE salon_id = 1;
+
 /**********************************************************************
 DATOS DE HORARIO
 ***********************************************************************/
@@ -149,12 +165,17 @@ INSERT INTO horario (horarioFinal, horarioInicio)
 VALUES ('18:00:00', '6:00:00');
 INSERT INTO horario (horarioFinal, horarioInicio)
 VALUES ('22:00:00', '18:00:00');
+INSERT INTO horario (horarioFinal, horarioInicio)
+VALUES ("20:20:00", "20:20");
+
+UPDATE horario SET horarioFinal = ? , horarioInicio =?  WHERE horarioId = ?;
 select * from horario;
+
+
 
 /**********************************************************************
 DATOS DE Carrera tecnica
 ***********************************************************************/
-
 INSERT INTO carrera_tecnica(codigo_carrera,nombre)
 VALUES ("IN5BV","Informatica Vespertina");
 INSERT INTO carrera_tecnica(codigo_carrera,nombre)
@@ -165,7 +186,11 @@ INSERT INTO carrera_tecnica(codigo_carrera,nombre)
 VALUES ("DI5AM","Dibujo Matutina");
 INSERT INTO carrera_tecnica(codigo_carrera,nombre)
 VALUES ("ME5AM","Mecanica Matutina");
+INSERT INTO carrera_tecnica(codigo_carrera,nombre)
+VALUES ("aaa"," AA");
 select * from carrera_tecnica;
+UPDATE carrera_tecnica SET codigo_carrera = "buenas",nombre = "tarde" where codigo_carrera = "hola";
+SELECT * FROM carrera_tecnica WHERE codigo_carrera = "aaa";
 
 /**********************************************************************
 DATOS DE Instructor
