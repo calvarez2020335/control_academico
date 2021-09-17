@@ -32,10 +32,41 @@
             </div>
         </header> 
 
+                <div class="modal fade" id="agregar-carreraTecnica-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Salon </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletCarreraTecnica">
+                        <div class="modal-body">
+
+                            <div class="mb-3">
+                                <label for="codigoCarrera" class="form-label">Codigo de la carrera</label>
+                                <input type="text" id="codigoCarrera" name="codigoCarrera" class="form-control" value="${carreratecnica.codigoCarrera}">
+                            </div>
+
+                            <div class="mb-3">
+                                <label form="nombre" class="form-label" >nombre de la carrera</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" value="${carreratecnica.nombre}">
+                            </div>
+
+                            <input type="hidden"  name="accion" value="insertar">                           
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Guardar</button>                    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
         <section id="estudiantes">
             <div class="container">
                 <div class="row">
-
                     <div class="col-12">
                         <table class="table table-dark table-sm border-primary text-center fs-5">
                             <thead class="table-dark">
@@ -56,12 +87,12 @@
                                         <td>${carreratecnica.nombre}</td>
                                         <td>
                                             <button type="button" class="btn btn-outline-danger rounded-pill">
-                                                <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigo_carrera=${carrera_tecnica.codigo_carrera}" class="text-decoration-none text-white"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                                                <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=eliminar&codigoCarrera=${carreratecnica.codigoCarrera}" class="text-decoration-none text-white"><i class="fas fa-trash-alt"></i> Eliminar</a>
                                             </button>
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-outline-success rounded-pill">
-                                                <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=editar&codigo_carrera=${carrera_tecnica.codigo_carrera}" class="text-decoration-none text-white"><i class="far fa-edit"></i> Editar</a>
+                                                <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=editar&codigoCarrera=${carreratecnica.codigoCarrera}" class="text-decoration-none text-white"><i class="far fa-edit"></i> Editar</a>
                                             </button>
                                         </td>               
                                     </tr>

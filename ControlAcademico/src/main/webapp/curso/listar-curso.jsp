@@ -48,29 +48,58 @@
         <div class="modal fade" id="agregar-curso-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
+                    <div class="modal-header bg-dark text-white">
                         <h5 class="modal-title" id="exampleModalLabel">Agregar Curso </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="POST" action="${pageContext.request.contextPath}/ServletAlumno">
-                        <div class="modal-body">
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletCurso">
+                        <div class="modal-body bg-black text-dark">
 
-                            <div class="mb-3">
-                                <label for="capacidad" class="form-label">...</label>
-                                <input type="number" id="capacidad" name="capacidad" class="form-control">
+                            <div class="form-floating mb-3">
+                                <input type="number" id="ciclo" name="ciclo" class="form-control" placeholder="Ciclo">
+                                <label for="ciclo" class="form-label">Ciclo</label>  
                             </div>
 
-                            <div class="mb-3">
-                                <label form="descripcion" class="form-label" >...</label>
-                                <input type="text" id="descripcion" name="descripcion" class="form-control">
+                            <div class="form-floating mb-3">
+                                <input type="number" id="cupo_maximo" name="cupo_maximo" class="form-control" placeholder="Cupo maximo">
+                                <label for="cupo_maximo" class="form-label">Cupo maximo</label>  
                             </div>
 
-                            <div class="mb-3">
-                                <label for="nombreSalon" class="form-label">...</label>
-                                <input type="text" id="nombreSalon" name="nombreSalon" class="form-control">                         
+                            <div class="form-floating mb-3">
+                                <input type="number" id="cupo_minimo" name="cupo_minimo" class="form-control" placeholder="Cupo minimo">
+                                <label for="cupo_minimo" class="form-label">Cupo minimo</label>  
                             </div>
 
-                            <input type="hidden"  name="accion" value="insertar">                           
+                            <div class="form-floating mb-3">
+                                <input type="text" id="descripcion" name="descripcion" class="form-control" placeholder="Descripcion">  
+                                <label for="descripcion" class="form-label">Descripcion</label>                        
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="text" id="codigo_carrera" name="codigo_carrera" class="form-control" placeholder="Codigo carrera">  
+                                <label for="codigo_carrera" class="form-label">Codigo carrera</label>  
+                                <a href="${pageContext.request.contextPath}/ServletCarreraTecnica?accion=listar" class="link-light">¿Cual el codigo de mi carrera? <i class="far fa-question-circle"></i></a>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="horario_id" name="horario_id" class="form-control" placeholder="Horario id">
+                                <label for="horario_id" class="form-label">Horario id</label>
+                                <a href="${pageContext.request.contextPath}/ServletHorario?accion=listar" class="link-light">¿Cual es mi id horario?  <i class="far fa-question-circle"></i></a>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="instructor_id" name="instructor_id" class="form-control" placeholder="Instructor id">
+                                <label for="instructor_id" class="form-label">Instructor id</label>
+                                <a href="${pageContext.request.contextPath}/ServletInstructor?accion=listar" class="link-light">¿Cual es mi instructor id?  <i class="far fa-question-circle"></i></a>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="number" id="salon_id" name="salon_id" class="form-control" placeholder="Salon id">
+                                <label for="salon_id" class="form-label">Salon id</label>
+                                <a href="${pageContext.request.contextPath}/ServletSalon?accion=listar" class="link-light">¿Cual es el id de mi salon? <i class="far fa-question-circle"></i></a>
+                            </div>
+
+                            <input type="hidden"  name="accion" value="insetar">                           
 
                         </div>
                         <div class="modal-footer">

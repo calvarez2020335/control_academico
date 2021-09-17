@@ -47,25 +47,20 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title" id="exampleModalLabel">Agregar Horario </h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Horario Formata: 24 Horas</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="POST" action="${pageContext.request.contextPath}/ServletAlumno">
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletHorario">
                         <div class="modal-body">
 
                             <div class="mb-3">
-                                <label for="capacidad" class="form-label">...</label>
-                                <input type="number" id="capacidad" name="capacidad" class="form-control">
+                                <label form="horarioFinal" class="form-label" >Horario De Fin </label>
+                                <input type="time" id="horarioFinal" name="horarioFinal" class="form-control" value="${horario.horarioFinal}">
                             </div>
 
                             <div class="mb-3">
-                                <label form="descripcion" class="form-label" >...</label>
-                                <input type="text" id="descripcion" name="descripcion" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="nombreSalon" class="form-label">...</label>
-                                <input type="text" id="nombreSalon" name="nombreSalon" class="form-control">                         
+                                <label for="horarioInicio" class="form-label">Horarios de inicio</label>
+                                <input type="time" id="horarioInicio" name="horarioInicio" class="form-control" value="${horario.horarioInicio}">                         
                             </div>
 
                             <input type="hidden"  name="accion" value="insertar">                           

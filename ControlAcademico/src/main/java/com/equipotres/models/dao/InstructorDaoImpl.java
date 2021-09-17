@@ -19,11 +19,14 @@ import java.util.List;
  *
  * @author carlos
  */
-public class InstructorDaoImpl implements IInstructorDao{
-     private static final String SQL_SELECT = "SELECT instructor_id,apellidos,nombres,direccion,telefono FROM Instructor";
-    private static final String SQL_DELETE = "DELETE FROM Instructor WHERE instructor_id = ?";
-    
-    
+public class InstructorDaoImpl implements IInstructorDao {
+
+    private static final String SQL_SELECT = "SELECT instructor_id, apellidos, nombres, direccion,telefono FROM instructor";
+    private static final String SQL_DELETE = "DELETE FROM instructor WHERE instructor_id = ?";
+    private static final String SQL_INSERT = "INSERT INTO instructor(apellidos, nombres, direccion, telefono) VALUES (?, ?, ?, ?)";
+    private static final String SQL_SELECT_BY_ID = "SELECT instructor_id, apellidos, nombres, direccion, telefono FROM instructor WHERE instructor_id = ?";
+    private static final String SQL_UPDATE = "UPDATE instructor SET apellidos = ?, nombres = ?, direccion = ?, telefono = ? WHERE instructor_id = ? ";
+
     Connection conn = null;
     PreparedStatement pstmt = null;
     ResultSet rs = null;
@@ -43,7 +46,6 @@ public class InstructorDaoImpl implements IInstructorDao{
                 String apellido = rs.getString("nombres");
                 String direccion = rs.getString("direccion");
                 String telefono = rs.getString("telefono");
-               
 
                 instructor = new Instructor(idinstructor, apellido, nombre, direccion, telefono);
                 listaInstructor.add(instructor);
@@ -51,8 +53,7 @@ public class InstructorDaoImpl implements IInstructorDao{
             }
         } catch (SQLException e) {
             e.printStackTrace(System.out);
-            
-            
+
         } finally {
             Conexion.close(rs);
             Conexion.close(pstmt);
@@ -64,37 +65,109 @@ public class InstructorDaoImpl implements IInstructorDao{
 
     @Override
     public Instructor encontrar(Instructor instructor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setInt(1, instructor.getInstructor_id());
+            System.out.println(pstmt.toString());
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                String apellidos = rs.getString("apellidos");
+                String nombres = rs.getString("nombres");
+                String direccion = rs.getString("direccion");
+                String telefono = rs.getString("telefono");
+
+                instructor.setApellidos(apellidos);
+                instructor.setNombres(nombres);
+                instructor.setDireccion(direccion);
+                instructor.setTelefono(telefono);
+
+                listaInstructor.add(instructor);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return instructor;
     }
-      
 
     @Override
     public int Insertar(Instructor instructor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setString(1, instructor.getApellidos());
+            pstmt.setString(2, instructor.getNombres());
+            pstmt.setString(3, instructor.getDireccion());
+            pstmt.setString(4, instructor.getTelefono());
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
     }
 
     @Override
     public int Actualizar(Instructor instructor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setString(1, instructor.getApellidos());
+            pstmt.setString(2, instructor.getNombres());
+            pstmt.setString(3, instructor.getDireccion());
+            pstmt.setString(4, instructor.getTelefono());
+            pstmt.setInt(5, instructor.getInstructor_id());
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
     }
 
     @Override
     public int Eliminar(Instructor instructor) {
         int rows = 0;
-        
+
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
-            pstmt.setInt(1 ,instructor.getInstructor_id());
+            pstmt.setInt(1, instructor.getInstructor_id());
             System.out.println(pstmt.toString());
             rows = pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace(System.out);
-        }finally {
+        } finally {
             Conexion.close(pstmt);
             Conexion.close(conn);
-    }
-        
+        }
+
         return rows;
     }
 }
