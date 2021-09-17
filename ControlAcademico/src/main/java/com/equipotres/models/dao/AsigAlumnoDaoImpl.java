@@ -5,7 +5,6 @@
  */
 package com.equipotres.models.dao;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,6 +26,9 @@ public class AsigAlumnoDaoImpl implements IAsignacionAlumnoDao {
 
     private static final String SQL_SELECT = "SELECT asignacion_id, carne, curso_id, fecha_asignacion FROM asignacion_alumno";
     private static final String SQL_DELETE = "DELETE FROM asignacion_alumno WHERE asignacion_id = ?";
+    private static final String SQL_INSERT = "INSERT INTO Asignacion_Alumno (asignacion_id, carne, curso_id, fecha_asignacion) VALUES (?, ?, ?, ?)";
+    private static final String SQL_SELECT_BY_ID = "SELECT asignacion_id, carne, curso_id, fecha_asignacion FROM asignacion_alumno WHERE asignacion_id = ? ";
+    private static final String SQL_UPDATE = "UPDATE asignacion_alumno SET carne = ?, curso_id = ?, fecha_asignacion = ? WHERE asignacion_id = ?";
 
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -47,7 +49,6 @@ public class AsigAlumnoDaoImpl implements IAsignacionAlumnoDao {
                 int cursoId = rs.getInt("curso_id");
                 Timestamp fechaAsignacion = rs.getTimestamp("fecha_asignacion");
 
-
                 asigAlumno = new AsignacionAlumno(asigancionId, carne, cursoId, fechaAsignacion);
                 listaAsigAlumno.add(asigAlumno);
             }
@@ -63,24 +64,98 @@ public class AsigAlumnoDaoImpl implements IAsignacionAlumnoDao {
 
     @Override
     public AsignacionAlumno encontrar(AsignacionAlumno asigAlumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
+            pstmt.setString(1, asigAlumno.getAsigancionId());
+            System.out.println(pstmt.toString());
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                
+                String carne = rs.getString("carne");
+                int cursoId = rs.getInt("curso_id");
+                Timestamp fechaAsignacion = rs.getTimestamp("fecha_asignacion");
+
+
+                /*utilizar metodos Set*/
+                asigAlumno.setCarne(carne);
+                asigAlumno.setCursoId(cursoId);
+                asigAlumno.setFechaAsignacion(fechaAsignacion);
+
+                listaAsigAlumno.add(asigAlumno);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+        return asigAlumno;
+
     }
 
     @Override
     public int insertar(AsignacionAlumno asigAlumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_INSERT);
+            pstmt.setString(1, asigAlumno.getAsigancionId());
+            pstmt.setString(2, asigAlumno.getCarne());
+            pstmt.setInt(3, asigAlumno.getCursoId());
+            pstmt.setTimestamp(4, asigAlumno.getFechaAsignacion());
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
     }
 
     @Override
     public int actualizar(AsignacionAlumno asigAlumno) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+            pstmt.setString(1, asigAlumno.getCarne());
+            pstmt.setInt(2, asigAlumno.getCursoId());
+            pstmt.setTimestamp(3, asigAlumno.getFechaAsignacion());
+            pstmt.setString(4, asigAlumno.getAsigancionId());
+            System.out.println(pstmt.toString());
+            rows = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } catch (Exception ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(pstmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
     }
 
     @Override
     public int eliminar(AsignacionAlumno asigAlumno) {
-       
+
         int rows = 0;
-        
+
         try {
             conn = Conexion.getConnection();
             pstmt = conn.prepareStatement(SQL_DELETE);
