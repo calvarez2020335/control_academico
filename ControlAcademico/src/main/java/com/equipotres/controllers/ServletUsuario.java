@@ -18,40 +18,29 @@ import javax.servlet.http.HttpServletResponse;
  * @author Carlos Adolfo Alvarez Crúz
  */
 public class ServletUsuario extends HttpServlet {
-    
+
     UsuarioDaoImpl dao = new UsuarioDaoImpl();
     Usuario u = new Usuario();
-    
+
     int r;
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
-        
-        if(accion.equals("Ingresar")){
+
+        if (accion.equals("Ingresar")) {
             String user = request.getParameter("txtnom");
             String pass = request.getParameter("txtpass");
             u.setUser(user);
             u.setPass(pass);
             r = dao.validar(u);
-            if(r==1){
+            if (r == 1) {
                 request.getRequestDispatcher("inicio.jsp").forward(request, response);
-            }else
+            } else {
                 request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
         }
-        
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
     }
 
     @Override

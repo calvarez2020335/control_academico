@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row justify-content-center pt-5 mt-5 m-1">
                 <div class="col-md-6 col-sm-8 col-xl-4 col-lg-5 formulario">
-                    <form action="ServletUsuario">
+                    <form method="POST" action="${pageContext.request.contextPath}/ServletUsuario">
                         <div class="form-group text-center pt-3">
                             <h1 class="text-light">INICIAR SESIÓN</h1>
                         </div>
